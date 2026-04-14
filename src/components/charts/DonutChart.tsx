@@ -28,7 +28,7 @@ export default function DonutChart({ data, height = 150 }: Props) {
               <Cell key={i} fill={entry.color} />
             ))}
           </Pie>
-          <Tooltip content={(props) => <ChartTooltip {...props} unit="%" />} />
+          <Tooltip content={(props) => <ChartTooltip {...(props as any)} unit="%" />} />
         </PieChart>
       </ResponsiveContainer>
 
