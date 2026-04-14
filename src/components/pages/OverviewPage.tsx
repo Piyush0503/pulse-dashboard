@@ -66,7 +66,11 @@ export default function OverviewPage() {
             ))}
           </div>
           <AreaMetricChart
-            data={reqData}
+            data={reqData.map((d) => ({
+              time: d.time,
+              req: d.req,
+              err: d.err,
+            }))}
             series={[
               { key: "err", name: "Errors/s", color: "#818cf8" },
               { key: "req", name: "Requests/s", color: "#38bdf8" },
@@ -106,7 +110,11 @@ export default function OverviewPage() {
             }
           />
           <BarMetricChart
-            data={revData}
+            data={revData.map((d) => ({
+              time: d.time,
+              rev: d.rev,
+              cost: d.cost,
+            }))}
             series={[
               { key: "rev", name: "Revenue", color: "#38bdf8" },
               { key: "cost", name: "Cost", color: "#334155" },

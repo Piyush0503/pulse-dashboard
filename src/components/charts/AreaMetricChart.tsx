@@ -17,7 +17,7 @@ interface Props {
   formatter?: (v: number) => string;
 }
 
-export default function AreaMetricChart({ data, series, height = 200, unit = "", formatter }: Props) {
+export default function AreaMetricChart({ data = [], series = [], height = 200, unit = "", formatter }: Props) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <AreaChart data={data} margin={{ top: 4, right: 4, left: -12, bottom: 0 }}>
