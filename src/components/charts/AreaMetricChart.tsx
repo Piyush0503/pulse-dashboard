@@ -41,7 +41,7 @@ export default function AreaMetricChart({ data, series, height = 200, unit = "",
           axisLine={false} tickLine={false}
           tickFormatter={(v) => formatter ? formatter(v) : `${v}${unit}`}
         />
-        <Tooltip content={(props) => <ChartTooltip {...props} unit={unit} formatter={formatter} />} />
+        <Tooltip content={(props) => <ChartTooltip  {...(props as any)} unit={unit} formatter={formatter} />} />
         {series.map((s) => (
           <Area
             key={s.key}
