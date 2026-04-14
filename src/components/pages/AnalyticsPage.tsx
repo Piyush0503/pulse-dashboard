@@ -71,7 +71,11 @@ export default function AnalyticsPage() {
       <Card>
         <SectionTitle title="Revenue Trend (24h)" sub="Revenue vs cost breakdown" />
         <AreaMetricChart
-          data={revData}
+          data={revData.map((d) => ({
+            time: d.time,
+            rev: d.rev,
+            cost: d.cost,
+          }))}
           series={[
             { key: "cost", name: "Cost", color: "#f87171" },
             { key: "rev", name: "Revenue", color: "#34d399" },

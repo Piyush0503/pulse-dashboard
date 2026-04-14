@@ -50,7 +50,11 @@ export default function MetricsPage() {
         <Card>
           <SectionTitle title="Request Volume" sub="Requests per second · live stream" live />
           <AreaMetricChart
-            data={reqData}
+            data={reqData.map((d) => ({
+              time: d.time,
+              req: d.req,
+              err: d.err,
+            }))}
             series={[{ key: "req", name: "Req/s", color: "#38bdf8" }]}
             height={220}
           />
